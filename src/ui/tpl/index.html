@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'" />
+        <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'" />
+        <link rel="stylesheet" href="../css/style.css" />
+        <title>Stephino RPG</title>
+    </head>
+    <body>
+        <audio autoplay loop data-audio="music">
+            <source src="../audio/music.webm" type="audio/webm">
+            <source src="../audio/music.mp3" type="audio/mpeg">
+        </audio>
+        <audio autoplay loop data-audio="ambiance">
+            <source src="../audio/ambience.webm" type="audio/webm">
+            <source src="../audio/ambience.mp3" type="audio/mpeg">
+        </audio>
+        
+        <!-- Login form -->
+        <div data-role="stephino-login">
+            <form action="index.html" method="post">
+                <div>
+                    <label for="user-email">E-mail address</label>
+                    <input type="text" name="user-email" id="user-email" size="20" value="" autocapitalize="off" />
+                    <div class="st-btn st-btn-help" data-help="email">
+                        <div><span></span><span></span><span class="st-btn-txt">?</span></div>
+                    </div>
+                </div>
+                <div>
+                    <label for="user-password">Password</label>
+                    <input type="password" name="user-password" id="user-password" size="20" value="" autocapitalize="off" />
+                    <div class="st-btn st-btn-help" data-help="password">
+                        <div><span></span><span></span><span class="st-btn-txt">?</span></div>
+                    </div>
+                </div>
+                <div>
+                    <label for="server-url">Server URL</label>
+                    <input type="text" name="server-url" id="server-url" size="20" value="https://wp-u1.tw.com" autocapitalize="off" />
+                    <div class="st-btn st-btn-help" data-help="server">
+                        <div><span></span><span></span><span class="st-btn-txt">?</span></div>
+                    </div>
+                </div>
+                <div class="submit">
+                    <button type="submit" class="st-btn">
+                        <div><span></span><span></span><span class="st-btn-txt">Log In</span></div>
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Decoration -->
+        <div data-role="stephino-icon"></div>
+        <div data-role="stephino-version">
+            <a rel="noreferrer" target="_blank" data-link="plugin">v. <b></b></a>
+        </div>
+        <div data-role="stephino-login-circle"></div>
+        <div data-role="stephino-login-char"></div>
+        <div data-role="stephino-login-help">
+            <span data-help-item="email">
+                Use an e-mail address to log in or create an account. Use a fake e-mail address if you wish, but note you won't be able to recover your password.
+            </span>
+            <span data-help-item="password">
+                You can leave the password blank when creating an account. The generated password will be stored for your next login.
+            </span>
+            <span data-help-item="server">
+                If you want to host this game on your own domain, head on to <a rel="noreferrer" target="_blank" data-link="plugin">WordPress.org</a> and install Stephino RPG for free.
+            </span>
+        </div>
+        <div data-role="stephino-login-blob">
+            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <path fill="#ff0066"
+                    d="M39.1,-50.4C49.1,-38.2,54.6,-24.4,53.1,-12.4C51.6,-0.4,43.2,9.8,38.2,25.3C33.1,40.8,31.5,61.5,22.1,68.1C12.7,74.7,-4.6,67.3,-23.9,61.9C-43.3,56.5,-64.8,53.2,-75.4,40.7C-85.9,28.2,-85.5,6.6,-74.2,-5.3C-62.8,-17.2,-40.5,-19.4,-26.3,-31C-12.1,-42.5,-6.1,-63.4,4.2,-68.4C14.5,-73.5,29.1,-62.7,39.1,-50.4Z"
+                    transform="translate(100 100)"></path>
+            </svg>
+        </div>
+
+        <!-- Utilities -->
+        <div data-role="info-badge">
+            <div class="icon"></div>
+            <span class="message"></span>
+        </div>
+        <div data-role="loading"><span></span></div>
+    </body>
+</html>

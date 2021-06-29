@@ -1,0 +1,68 @@
+{
+    "name": "stephino-rpg",
+    "version": "0.0.1",
+    "description": "Stephino RPG Client",
+    "main": "stephino-rpg-main.js",
+    "stephinoRpg": {
+        "debug": false,
+        "serverUrl": "https://stephino.com",
+        "pluginUrl": "https://wordpress.org/plugins/stephino-rpg",
+        "windowWidth": 1300,
+        "windowHeight": 730
+    },
+    "scripts": {
+        "start": "electron-forge start",
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "package": "electron-forge package",
+        "make": "electron-forge make"
+    },
+    "keywords": [
+        "stephino-rpg",
+        "wordpress"
+    ],
+    "author": "Mark Jivko",
+    "license": "GPL-3.0-or-later",
+    "devDependencies": {
+        "@electron-forge/cli": "^6.0.0-beta.57",
+        "@electron-forge/maker-deb": "^6.0.0-beta.57",
+        "@electron-forge/maker-rpm": "^6.0.0-beta.57",
+        "@electron-forge/maker-squirrel": "^6.0.0-beta.57",
+        "@electron-forge/maker-zip": "^6.0.0-beta.57",
+        "electron": "^13.1.4"
+    },
+    "dependencies": {
+        "electron-squirrel-startup": "^1.0.0",
+        "electron-store": "^8.0.0",
+        "i18n": "^0.13.3",
+        "jquery": "^3.6.0"
+    },
+    "config": {
+        "forge": {
+            "packagerConfig": {
+                "icon": "./src/ui/img/icon"
+            },
+            "makers": [
+                {
+                    "name": "@electron-forge/maker-squirrel",
+                    "config": {
+                        "name": "stephino_rpg"
+                    }
+                },
+                {
+                    "name": "@electron-forge/maker-zip",
+                    "platforms": [
+                        "darwin"
+                    ]
+                },
+                {
+                    "name": "@electron-forge/maker-deb",
+                    "config": {}
+                },
+                {
+                    "name": "@electron-forge/maker-rpm",
+                    "config": {}
+                }
+            ]
+        }
+    }
+}
