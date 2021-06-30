@@ -1,6 +1,6 @@
 <p align="center">
     <a href="https://wordpress.org/plugins/stephino-rpg">
-        <img src="https://github.com/Stephino/RPG-Client-Desktop/raw/main/src/ui/img/stephino-rpg-banner.jpg"/>
+        <img src="https://repository-images.githubusercontent.com/381434936/942ec100-d982-11eb-8df7-3f4542009801"/>
     </a>
 </p>
 
