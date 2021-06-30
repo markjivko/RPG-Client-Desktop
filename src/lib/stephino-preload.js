@@ -9,7 +9,7 @@
  * @license    GPL v3+, https://gnu.org/licenses/gpl-3.0.txt
  */
 const { remote, ipcRenderer } = require('electron');
-const config = require('../../package.json');
+const core = require('../../package.json');
 const crypto = require('crypto');
 const Store = require('electron-store');
 
@@ -114,12 +114,12 @@ window.addEventListener('DOMContentLoaded', () => {
 
     // Labels
     $('[data-role="stephino-version"] b').html(remote.app.getVersion());
-    $('[data-link="plugin"]').attr('href', config.stephinoRpg.pluginUrl).one('mouseover', function() {
+    $('[data-link="plugin"]').attr('href', core.config.stephino.pluginUrl).one('mouseover', function() {
         stephino_rpg_tools.toast.show('Click to learn more');
     });
 
     // Prepare the server URL
-    var url = new URL(storeMain.get("serverUrl", config.stephinoRpg.serverUrl));
+    var url = new URL(storeMain.get("serverUrl", core.config.stephino.serverUrl));
     
     // Get the store key
     const storeKey = crypto.createHash('md5').update(
@@ -129,7 +129,7 @@ window.addEventListener('DOMContentLoaded', () => {
     // Prepare the credentials
     $('[name="user-email"]').val(storeMain.get("userEmail", ""));
     $('[name="user-password"]').val(storeCreds.get(storeKey, ""));
-    $('[name="server-url"]').val(storeMain.get("serverUrl", config.stephinoRpg.serverUrl));    
+    $('[name="server-url"]').val(storeMain.get("serverUrl", core.config.stephino.serverUrl));    
 
     // Volumes
     $('[data-audio="music"]')[0].volume = 0.3;
@@ -160,7 +160,7 @@ window.addEventListener('DOMContentLoaded', () => {
         window.setTimeout(() => {
             ipcRenderer.send('ipc:handshake', {
                 userEmail: storeMain.get("userEmail", ""),
-                serverUrl: storeMain.get("serverUrl", config.stephinoRpg.serverUrl)
+                serverUrl: storeMain.get("serverUrl", core.config.stephino.serverUrl)
             });
         }, 1500);
         

@@ -1,18 +1,11 @@
 {
     "name": "stephino-rpg",
     "version": "0.0.1",
-    "description": "Stephino RPG Client",
+    "description": "Stephino RPG - Desktop Client",
     "main": "stephino-rpg-main.js",
-    "stephinoRpg": {
-        "debug": false,
-        "serverUrl": "https://stephino.com",
-        "pluginUrl": "https://wordpress.org/plugins/stephino-rpg",
-        "windowWidth": 1300,
-        "windowHeight": 730
-    },
     "scripts": {
         "start": "electron-forge start",
-        "test": "echo \"Error: no test specified\" && exit 1",
+        "test": "echo \"No test specified\" && exit 1",
         "package": "electron-forge package",
         "make": "electron-forge make"
     },
@@ -22,6 +15,10 @@
     ],
     "author": "Mark Jivko",
     "license": "GPL-3.0-or-later",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/stephino/rpg-client-desktop"
+    },
     "devDependencies": {
         "@electron-forge/cli": "^6.0.0-beta.57",
         "@electron-forge/maker-deb": "^6.0.0-beta.57",
@@ -63,6 +60,13 @@
                     "config": {}
                 }
             ]
+        },
+        "stephino": {
+            "debug": false,
+            "serverUrl": "https://stephino.com",
+            "pluginUrl": "https://wordpress.org/plugins/stephino-rpg",
+            "windowWidth": 1300,
+            "windowHeight": 730
         }
     }
 }

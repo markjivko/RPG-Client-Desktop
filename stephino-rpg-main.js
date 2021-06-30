@@ -10,7 +10,7 @@
  */
 const { app, BrowserWindow } = require('electron');
 const stephinoRpg = require('./src/lib/stephino-rpg');
-const config = require('./package.json');
+const core = require('./package.json');
 const path = require('path');
 const i18n = require('i18n');
 
@@ -24,7 +24,7 @@ i18n.configure({
 // Uncaught exceptions
 process.on('uncaughtException', (exc) => {
     stephinoRpg.getGameWindow().webContents.send('ipc:error', exc.message);
-    config.stephinoRpg.debug && console.warn(exc);
+    core.config.stephino.debug && console.warn(exc);
 });
 
 // App ready

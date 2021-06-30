@@ -11,7 +11,7 @@
 const { net, shell, session, ipcMain, BrowserView, BrowserWindow } = require('electron');
 const querystring = require('querystring');
 const path = require('path');
-const config = require('../../package.json');
+const core = require('../../package.json');
 const crypto = require('crypto');
 const Store = require('electron-store');
 
@@ -44,7 +44,7 @@ module.exports = new (class Stephino_Rpg {
         },
         play: () => {
             const store = new Store({name: 'stephino-rpg'});
-            const serverUrl = store.get("serverUrl", config.stephinoRpg.serverUrl);
+            const serverUrl = store.get("serverUrl", core.config.stephino.serverUrl);
 
             // Prepare the URL
             const url = new URL(serverUrl);
@@ -76,8 +76,8 @@ module.exports = new (class Stephino_Rpg {
         // Initialize the window
         if (null === Stephino_Rpg._gameWindow) {
             Stephino_Rpg._gameWindow = new BrowserWindow({
-                width: config.stephinoRpg.windowWidth,
-                height: config.stephinoRpg.windowHeight,
+                width: core.config.stephino.windowWidth,
+                height: core.config.stephino.windowHeight,
                 icon: path.join(path.dirname(__dirname), 'ui/img/icon.ico'),
                 resizable: true,
                 titleBarStyle: 'hidden',
@@ -98,7 +98,7 @@ module.exports = new (class Stephino_Rpg {
             });
 
             // Dev mode
-            config.stephinoRpg.debug && Stephino_Rpg._gameWindow.webContents.on('context-menu', (event, url) => {
+            core.config.stephino.debug && Stephino_Rpg._gameWindow.webContents.on('context-menu', (event, url) => {
                 Stephino_Rpg._gameWindow.webContents.openDevTools({ mode: 'detach' });
             });
 
@@ -158,7 +158,7 @@ module.exports = new (class Stephino_Rpg {
                     // Read the readme to earch for the current version
                     response.on('data', (bytes) => {
                         let responseData = JSON.parse(String(bytes));
-                        config.stephinoRpg.debug && console.log(responseData);
+                        core.config.stephino.debug && console.log(responseData);
                         if (null === responseData || "object" !== typeof responseData || "string" !== typeof responseData.result) {
                             throw new Error('Could not detect Stephino RPG version');
                         }
@@ -195,7 +195,7 @@ module.exports = new (class Stephino_Rpg {
                             requestAuth.on('response', (response) => {
                                 response.on('data', (bytes) => {
                                     let responseData = JSON.parse(String(bytes));
-                                    config.stephinoRpg.debug && console.log(responseData);
+                                    core.config.stephino.debug && console.log(responseData);
 
                                     // Generated a new password
                                     if (200 === response.statusCode && "string" === typeof responseData.result && responseData.result.length > 1) {
@@ -245,8 +245,8 @@ module.exports = new (class Stephino_Rpg {
      */
     getBrowserView(resetBounds) {
         var browserViewBounds = {
-            width: config.stephinoRpg.windowWidth,
-            height: config.stephinoRpg.windowHeight,
+            width: core.config.stephino.windowWidth,
+            height: core.config.stephino.windowHeight,
             x: 0,
             y: 0,
             horizontal: true,
@@ -292,7 +292,7 @@ module.exports = new (class Stephino_Rpg {
             });
 
             // Dev mode
-            config.stephinoRpg.debug && Stephino_Rpg._browserView.webContents.on('did-start-loading', (event, url) => {
+            core.config.stephino.debug && Stephino_Rpg._browserView.webContents.on('did-start-loading', (event, url) => {
                 Stephino_Rpg._browserView.webContents.openDevTools({ mode: 'detach' });
             });
         }
