@@ -16,7 +16,7 @@ Once installed, all game assets are stored safely on your device and all the req
 
 ### Getting started
 
-Assuming you have installed `node` and `git` on your system, you should run the following commands:
+Assuming you have installed `node` and `git` on your system, you should then run the following commands:
 
 ```
 git clone https://github.com/stephino/rpg-client-desktop .
