@@ -12,7 +12,7 @@ This app manages your login credentials and checks the remote server version for
 
 The game runs as a [Progressive Web Application](https://web.dev/progressive-web-apps) inside of a local, secure [Electron.js](https://www.electronjs.org/) web browser.
 
-Once installed, all game assets are stored safely on your device and all the requests triggered by the game are remote procedure calls.
+Once installed, all game assets are stored safely on your device and all requests triggered by the game are remote procedure calls.
 
 ### Getting started
 
