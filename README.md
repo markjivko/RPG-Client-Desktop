@@ -1,9 +1,3 @@
-<p align="center">
-    <a href="https://store.steampowered.com/app/909060">
-        <img src="https://repository-images.githubusercontent.com/381434936/942ec100-d982-11eb-8df7-3f4542009801"/>
-    </a>
-</p>
-
 # RPG (Desktop Client)
 
 Connect to your favorite [RPG](https://github.com/Stephino/RPG) server right from your desktop.
