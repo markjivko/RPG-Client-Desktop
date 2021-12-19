@@ -4,9 +4,9 @@
     </a>
 </p>
 
-# Stephino RPG (Desktop Client)
+# RPG (Desktop Client)
 
-Connect to your favorite [Stephino RPG](https://github.com/Stephino/RPG) server right from your desktop.
+Connect to your favorite [RPG](https://github.com/Stephino/RPG) server right from your desktop.
 
 This app manages your login credentials and checks the remote server version for compatibility.
 
@@ -26,6 +26,4 @@ npm start
 
 ### Hosting your own games
 
-You can host this game on your own domain by installing [Stephino RPG](https://wordpress.org/plugins/stephino-rpg) on your WordPress website.
-
-In order to unlock the `Game Mechanics` and get access to all game assets, you will also need to install [Stephino RPG Pro](https://gum.co/stephino-rpg).
+You can host this game on your own domain by installing [RPG](https://github.com/Stephino/RPG) on your WordPress website.
