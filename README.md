@@ -1,5 +1,11 @@
 # RPG (Desktop Client)
 
+<p align="center">
+    <a href="https://store.steampowered.com/app/909060/Stephino_RPG/">
+        <img src="https://repository-images.githubusercontent.com/381434936/60f06998-0c08-4d7f-8014-434cfd30e054"/>
+    </a>
+</p>
+
 Connect to your favorite [RPG](https://github.com/markjivko/RPG) server right from your desktop.
 
 This app manages your login credentials and checks the remote server version for compatibility.
