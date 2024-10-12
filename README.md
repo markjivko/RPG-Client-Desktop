@@ -20,7 +20,7 @@ Assuming you have installed `node` and `git` on your system, you should then run
 
 ```
 git clone https://github.com/markjivko/rpg-client-desktop .
-npm install --save-dev electron @electron-forge/cli electron-store i18n jquery
+npm install
 npm start
 ```
 
